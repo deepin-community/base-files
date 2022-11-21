@@ -1,7 +1,7 @@
 Source: base-files
 Section: admin
 Priority: required
-Maintainer: Deepin Developer <deepin-dev@deepin.org>
+Maintainer: Deepin Developer <deepin-dev@deepin.org> 
 Standards-Version: 4.1.3
 Build-Depends: debhelper-compat (= 13)
 
