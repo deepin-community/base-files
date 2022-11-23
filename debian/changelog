@@ -1,3 +1,9 @@
+base-files (23-3) unstable; urgency=medium
+
+  * add debian_version.
+
+ -- lichenggang <lichenggang@uniontech.com>  Wed, 23 Nov 2022 18:17:14 +0800
+
 base-files (23-2) unstable; urgency=medium
 
   * add deepin_version.
