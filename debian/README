@@ -1,7 +1,7 @@
 Frequently Asked Questions about base-files
 ===========================================
 
-* Questions about /etc/issue and /etc/deepin_version:
+* Questions about /etc/issue and /etc/debian_version:
 
 Q. I upgraded my system to the testing distribution and now my /etc/issue
 says "bookworm/sid". Should it not read "bookworm" or "testing"?
@@ -26,16 +26,16 @@ A. The codename is a little bit more informative, as the meaning of
 
 Q. Ok, but how do I know which distribution I'm running?
 
-A. If you are running testing or unstable, then /etc/deepin_version is
+A. If you are running testing or unstable, then /etc/debian_version is
 not a reliable way to know that anymore. Looking at the contents of
 your /etc/apt/sources.list file is probably a much better way.
 
 Q. There is a new point release and I've just upgraded my system.
-The /etc/deepin_version file now says 10.x but /etc/issue still says 10.
+The /etc/debian_version file now says 10.x but /etc/issue still says 10.
 Is this ok?
 
 A. Yes. The release managers asked me not to touch /etc/issue, as that's
-a file which is often customized by the user. The /etc/deepin_version file,
+a file which is often customized by the user. The /etc/debian_version file,
 on the other side, is updated at every point release, so that the exact
 Debian version is shown when used by tools like reportbug.
 
@@ -95,5 +95,12 @@ freedom to remove those directories without them being created again
 when base-files is upgraded. Therefore, if you are running any sort of
 compliance tests, you should do it on newly installed systems only.
 
+Q. My system (when I do "dpkg -s base-files") shows /etc/profile as
+an "obsolete conffile". Is this ok?
+
+A. Yes. The file was handled by base-files as a conffile in the dpkg sense
+in the past, so dpkg may consider the file as an obsolete conffile.
+There is currently not a way to tell dpkg to unregister it as a conffile
+without removing it, so the best approach for now is to do nothing about it.
 
 Santiago Vila <sanvila@debian.org>
