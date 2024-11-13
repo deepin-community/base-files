@@ -1,3 +1,15 @@
+base-files (23.1-5) unstable; urgency=medium
+
+  * Link bin, lib, sbin, $(USR_MERGE_RTLDLIB), $(USR_MERGE_MULTILIB) to usr/.
+    Now base-files Provides: usr-is-merged.
+  * Bump Standards-Version to 4.7.0.
+  * Add missing debian/copyright.
+  * Use run-parts for sourcing scripts in /etc/profile.d.
+    Only source *.sh if they conform to a sensible regexp including only some
+    ASCII characters.
+
+ -- Tianyu Chen <sweetyfish@deepin.org>  Wed, 13 Nov 2024 14:22:38 +0800
+
 base-files (23.1-4) unstable; urgency=medium
 
   * Change ID=deepin. 
