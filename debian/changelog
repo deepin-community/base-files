@@ -1,3 +1,9 @@
+base-files (25-5) unstable; urgency=medium
+
+  * update deepin 25.
+
+ -- lichenggang <lichenggang@deepin.org>  Mon, 18 Nov 2024 15:24:03 +0800
+
 base-files (23.1-5) unstable; urgency=medium
 
   * Link bin, lib, sbin, $(USR_MERGE_RTLDLIB), $(USR_MERGE_MULTILIB) to usr/.
