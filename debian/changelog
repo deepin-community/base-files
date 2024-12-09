@@ -1,3 +1,9 @@
+base-files (25-6) unstable; urgency=medium
+
+  * share/motd Deepin to deepin. 
+
+ -- lichenggang <lichenggang@deepin.org>  Mon, 09 Dec 2024 17:36:46 +0800
+
 base-files (25-5) unstable; urgency=medium
 
   * update deepin 25.
