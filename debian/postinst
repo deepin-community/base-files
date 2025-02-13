@@ -57,7 +57,7 @@ if [ ! -e "$DPKG_ROOT/etc/dpkg/origins/default" ]; then
     ln -sf #VENDORFILE# "$DPKG_ROOT/etc/dpkg/origins/default"
   fi
 fi
-
+cp -p /usr/share/base-files/motd          /etc/motd
 if [ "$1" = "configure" ] && [ "$2" = "" ]; then
   install_from_default dot.profile   /root/.profile
   install_from_default dot.bashrc    /root/.bashrc
