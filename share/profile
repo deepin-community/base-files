@@ -32,3 +32,5 @@ if [ -d /etc/profile.d ]; then
   done
   unset i
 fi
+
+tty | egrep -q tty[1-6] && export TMOUT=900
