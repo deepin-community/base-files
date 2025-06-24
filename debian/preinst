@@ -3,6 +3,11 @@ set -e
 
 if [ "$1" = "install" ] || [ "$1" = "upgrade" ]; then
   msg=
+  # 解决升级过程中/usr/lib64目录不存在的问题，磐石导致
+  # 判断是否存在链接/lib64并且不存在/usr/lib64目录，则删除链接
+  if [ -L /lib64 ] && [ ! -d /usr/lib64 ]; then
+    rm -f /lib64
+  fi
   for d in bin lib lib32 lib64 libo32 libx32 sbin; do
     if [ -L "$DPKG_ROOT/$d" ]; then
       target=$(readlink "$DPKG_ROOT/$d")
