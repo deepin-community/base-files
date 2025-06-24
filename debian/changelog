@@ -1,3 +1,9 @@
+base-files (25-6deepin3) unstable; urgency=medium
+
+  * update codename , beige -> crimson.
+
+ -- lichenggang <lichenggang@deepin.org>  Tue, 24 Jun 2025 16:43:39 +0800
+
 base-files (25-6deepin1) unstable; urgency=medium
 
   * add cp -p /usr/share/base-files/motd          /etc/motd
