@@ -1,3 +1,9 @@
+base-files (25-6deepin5) unstable; urgency=medium
+
+  * Make /var/local to be root:root and 755 by default on new installs.
+
+ -- xinpeng.wang <wangxinpeng@uniontech.com>  Thu, 21 May 2026 16:23:08 +0800
+
 base-files (25-6deepin4) unstable; urgency=medium
 
   * Delete the link/lib64 if the/etc/lib64 directory does not exist.
