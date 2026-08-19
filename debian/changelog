@@ -1,3 +1,17 @@
+base-files (25-6deepin6) unstable; urgency=medium
+
+  * Fix postinst cp failure when motd files are hard links
+    - cp -p /usr/share/base-files/motd /etc/motd fails with "are the same
+      file" when ostree checkout hard-links the two files because their
+      content hashes are identical
+    - Use cp -p --remove-destination so the copy succeeds and breaks the
+      hard link
+    - Honor DPKG_ROOT for chroot installs
+  * Only run the motd copy during configure (install or upgrade), not on
+    triggers
+
+ -- lichenggang <lichenggang@uniontech.com>  Wed, 19 Aug 2026 15:14:54 +0800
+
 base-files (25-6deepin5) unstable; urgency=medium
 
   * Make /var/local to be root:root and 755 by default on new installs.
