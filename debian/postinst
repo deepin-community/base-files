@@ -57,7 +57,15 @@ if [ ! -e "$DPKG_ROOT/etc/dpkg/origins/default" ]; then
     ln -sf #VENDORFILE# "$DPKG_ROOT/etc/dpkg/origins/default"
   fi
 fi
-cp -p /usr/share/base-files/motd          /etc/motd
+# Refresh /etc/motd only when the package is being configured (fresh
+# install or upgrade); postinst also runs on triggers, where overwriting
+# the admin's /etc/motd would be wrong. With --remove-destination the
+# copy also succeeds when the two files are hard links to the same
+# inode, e.g. after an ostree checkout deduplicates identical content
+# by hash.
+if [ "$1" = "configure" ]; then
+  cp -p --remove-destination "$DPKG_ROOT/usr/share/base-files/motd" "$DPKG_ROOT/etc/motd"
+fi
 if [ "$1" = "configure" ] && [ "$2" = "" ]; then
   install_from_default dot.profile   /root/.profile
   install_from_default dot.bashrc    /root/.bashrc
